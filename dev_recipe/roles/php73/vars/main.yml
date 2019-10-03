@@ -1,0 +1,12 @@
+---
+php_packages: [
+  "php",
+  "php-dbg",
+  "php-devel",
+  "php-mbstring",
+  "php-intl",
+  "php-mysql",
+  "php-xml",
+  "php-pecl-xdebug",
+  "php-gd"
+]

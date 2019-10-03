@@ -1,0 +1,15 @@
+- name: install mysql rpm package
+  yum: name=https://dev.mysql.com/get/mysql80-community-release-el7-2.noarch.rpm
+
+- name: delete maria-db
+  yum: name=mariadb-libs state=absent
+
+- name: install mysql
+  yum: name={{ mysql_packages }}
+
+- name: start mysql and enabled
+  service: name=mysqld state=started enabled=yes
+
+# Automatic mysql_secure_instllation
+# https://www.soudegesu.com/mysql/mysql8-password/
+# About mysql_secure_installation: https://blog.apar.jp/linux/9868/

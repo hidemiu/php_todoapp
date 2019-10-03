@@ -1,0 +1,14 @@
+- name: install mysql rpm package
+  yum: name=http://dev.mysql.com/get/mysql-community-release-el6-5.noarch.rpm
+
+- name: delete maria-db
+  yum: name=mariadb-libs state=absent
+
+- name: install mysql
+  yum: name={{ mysql_packages }}
+
+- name: start mysql and enabled
+  service: name=mysqld state=started enabled=yes
+
+- name: create a database
+  mysql_db: name=mydb state=present

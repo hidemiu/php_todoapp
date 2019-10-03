@@ -1,0 +1,15 @@
+#
+# site.yml
+#
+---
+- hosts: all
+  become: yes
+  
+  roles:
+  - { role: repo_remi }
+  - { role: httpd }
+  - { role: php73 }
+  - { role: mysql56 }
+#  - { role: mysql80 }
+
+  
