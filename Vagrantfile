@@ -19,7 +19,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     dev.vm.provision :shell, :inline => "echo Hide Vagrant"
     # dev.vm.provision :shell, :path => "provision.sh"
-    dev.vm.provision "ansible" do |ansible|
+    dev.vm.provision "ansible_local" do |ansible|
        ansible.playbook = "dev_recipe/site.yml"
     end
 
