@@ -1,1 +1,2 @@
-/dev_deploy/
+.vagrant
+dev_deploy
